@@ -5,8 +5,9 @@ import Ads from './components/ads/Ads';
 
 function App() {
   return (
-    <div>  <NavBar/>
-     <Ads/>
+    <div className="App">
+    
+
     </div>
    
   );

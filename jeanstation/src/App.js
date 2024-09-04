@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import Hyderabad from './Components/Hyderabad/Hyderabad';
+import Banglore from './Components/locations/Banglore/Banglore';
+import Chennai from './Components/locations/Chennai/Chennai';
+import Stores from './Components/stores/Stores';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Stores/>
+        <Routes>
+          <Route path='/Hyderabad' element={<Hyderabad/>}/>
+          <Route path='/Banglore' element={<Banglore/>}/>
+          <Route path='/Chennai' element={<Chennai/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
-
 export default App;

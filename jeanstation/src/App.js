@@ -1,24 +1,24 @@
-import './App.css';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import Hyderabad from './Components/Hyderabad/Hyderabad';
-import Banglore from './Components/locations/Banglore/Banglore';
-import Chennai from './Components/locations/Chennai/Chennai';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Stores from './Components/stores/Stores';
+import StoreProducts from './Components/storeproducts/StoreProducts';
+import ProductDescription from './Components/productdescription/ProductDescription';
+import NavBar from './Components/Navbar/NavBar';
+import './App.css';
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <Stores/>
+        <NavBar />
         <Routes>
-          <Route path='/Hyderabad' element={<Hyderabad/>}/>
-          <Route path='/Banglore' element={<Banglore/>}/>
-          <Route path='/Chennai' element={<Chennai/>}/>
+          <Route path="/" element={<Stores />} />
+          <Route path="/products/:id" element={<StoreProducts />} />
+          <Route path="/product/:id" element={<ProductDescription />} />
         </Routes>
       </Router>
     </div>
-   
   );
 }
+
 export default App;
-
-

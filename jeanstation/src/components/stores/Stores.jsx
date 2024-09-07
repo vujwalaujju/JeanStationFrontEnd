@@ -1,26 +1,34 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import './Stores.css'
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './Stores.css';
+
 const Stores = () => {
-    const navigate=useNavigate()
-  const  Hhandler=()=>{
-        navigate('/Hyderabad')
-    }
-    const Bhandler=()=>{
-        navigate('/Banglore')
-    }
-    const Chandler=()=>{
-        navigate('/Chennai')
-    }
+  const [store, setStore] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/Stores").then((response) => {
+      setStore(response.data);
+    });
+  }, []);
+
+  const handleStoreClick = (id) => {
+    navigate(`/products/${id}`);
+  };
+
   return (
-    <div>
-    <ol>
-        <li><Link to ='/Hyderabad'><div onClick={Hhandler}>Hyderabad-1</div></Link></li>
-        <li><Link to ='/Banglore'><div onClick={Bhandler}>Banglore-2</div></Link></li>
-        <li><Link to='/Chennai'><div onclick={Chandler}>Chennai-3</div></Link></li>
-    </ol>
+    <div className="cardcontainer">
+      {store.map((Stores) => (
+        <div className="product-card" key={Stores.id} onClick={() => { handleStoreClick(Stores.id) }}>
+          <h4>{Stores.id}</h4>
+          <h4>{Stores.location}</h4>
+          <img src={Stores.URL} width={60} height={40} alt={Stores.name} />
+          <h4>{Stores.name}</h4>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Stores
+export default Stores;

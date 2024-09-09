@@ -7,6 +7,9 @@ const ProductDescription = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [availableColors, setAvailableColors] = useState([]);
+  const [selectedColor, setSelectedColor] = useState(null);
 
   useEffect(() => {
     axios.get(`http://localhost:3000/products/${id}`).then((response) => {
@@ -16,8 +19,42 @@ const ProductDescription = () => {
     });
   }, [id]);
 
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+    setAvailableColors(Object.keys(product.Scolor[size]));
+    setSelectedColor(null);
+    setQuantity(1);
+  };
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+    setQuantity(product.Scolor[selectedSize][color]);
+  };
+
   const handleQuantityChange = (amount) => {
-    setQuantity(prevQuantity => Math.max(1, prevQuantity + amount));
+    const newQuantity = Math.max(0, quantity + amount);
+    setQuantity(newQuantity);
+
+    if (newQuantity >= 0) {
+      const updatedProduct = {
+        ...product,
+        Scolor: {
+          ...product.Scolor,
+          [selectedSize]: {
+            ...product.Scolor[selectedSize],
+            [selectedColor]: product.Scolor[selectedSize][selectedColor] - amount
+          }
+        }
+      };
+
+      axios.post(`http://localhost:3000/products/${id}`, updatedProduct)
+        .then(response => {
+          setProduct(response.data);
+        })
+        .catch(error => {
+          console.error("Error updating quantity:", error);
+        });
+    }
   };
 
   if (!product) return <div>Loading...</div>;
@@ -31,21 +68,38 @@ const ProductDescription = () => {
       <div>
         <label>Sizes: </label>
         {product.sizes.map(size => (
-          <button key={size} className="size-button">{size}</button>
+          <button 
+            key={size} 
+            className={`size-button ${selectedSize === size ? 'selected' : ''}`} 
+            onClick={() => handleSizeClick(size)}
+          >
+            {size}
+          </button>
         ))}
       </div>
-      <div>
-        <label>Colors: </label>
-        {product.colors.map(color => (
-          <button key={color} className="color-button" style={{ backgroundColor: color }}></button>
-        ))}
-      </div>
-      <div className="quantity-control">
-        <button onClick={() => handleQuantityChange(-1)}>-</button>
-        <span>{quantity}</span>
-        <button onClick={() => handleQuantityChange(1)}>+</button>
-      </div>
-      <button className="add-to-cart">Add to Cart</button>
+      {selectedSize && (
+        <div>
+          <label>Colors: </label>
+          {availableColors.map(color => (
+            <button 
+              key={color} 
+              className={`color-button ${selectedColor === color ? 'selected' : ''}`} 
+              style={{ backgroundColor: color }} 
+              onClick={() => handleColorClick(color)}
+            >
+              {color}
+            </button>
+          ))}
+        </div>
+      )}
+      {selectedColor && (
+        <div className="quantity-control">
+          <button onClick={() => handleQuantityChange(-1)} disabled={quantity <= 0}>-</button>
+          <span>{quantity > 0 ? quantity : 'Out of Stock'}</span>
+          <button onClick={() => handleQuantityChange(1)} disabled={quantity <= 0}>+</button>
+        </div>
+      )}
+      <button className="add-to-cart" disabled={quantity <= 0}>Add to Cart</button>
     </div>
   );
 };

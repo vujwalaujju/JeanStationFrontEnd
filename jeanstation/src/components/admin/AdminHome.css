@@ -1,0 +1,22 @@
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form .form-label {
+    font-weight: bold;
+  }
+  
+  form .btn {
+    width: 100%;
+  }
+  

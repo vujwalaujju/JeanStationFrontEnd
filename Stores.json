@@ -1,104 +1,292 @@
 {
-    "Stores":[ {
-        "id": 1,
-        "name": "Relay Jeans",
-        "location": "Hyderabad",
-        "URL": "https://th.bing.com/th?q=Nicest+Relay+Jeans+Store&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
-  
-        
-      },
-      {
-        "id": 2,
-        "name": "Second SKins",
-        "location": "Banglore",
-        "URL": "https://th.bing.com/th/id/OIP.qfjWGWhlpQ1UV_kjcI29YAHaE8?w=284&h=189&c=7&r=0&o=5&pid=1.7"
-      },
-      {
-        "id": 3,
-        "name": "Cargo Jeans",
-        "location": "Chennai",
-        "URL": "https://th.bing.com/th/id/OIP.I-Evjk5KbNyRH9CGo-NR7QHaFc?w=268&h=196&c=7&r=0&o=5&pid=1.7"
-  
-      },
-      {
-        "id": 4,
-        "name": "Vevis",
-        "location": "Delhi",
-        "URL": "https://th.bing.com/th?q=Tonny+Jeans+Store&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
-      },
-      {
-        "id":5,
-        "name": "Braves",
-        "location": "Mumbai",
-        "URL": "https://th.bing.com/th/id/OIP.ULVnejqfAaL9wpngdtQsBQHaFi?w=256&h=191&c=7&r=0&o=5&pid=1.7"
-      }
-  
-    ],
-    "products":[
-      {
-        "id": "26",
-        "pname": "jeans",
-        "price": 123,
-        "Storeid": "1",
-        "url": "https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain",
-        "gender": "women",
-        "description": "High-quality denim jeans with a comfortable fit.",
-        "sizes": ["S", "M", "L", "XL"],
-        "Scolor": {
-          "S": {
-            "blue": 10,
-            "black": 15,
-            "white": 5
-          },
-          "M": {
-            "black": 20,
-            "blue": 8
-          },
-          "L": {
-            "black": 12
-          },
-          "XL": {
-            "black": 7,
-            "white": 3
-          }
+  "Stores": [
+    {
+      "id": "1",
+      "name": "Relay Jeans",
+      "location": "Hyderabad",
+      "URL": "https://th.bing.com/th?q=Nicest+Relay+Jeans+Store&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
+    },
+    {
+      "id": "2",
+      "name": "Second SKins",
+      "location": "Banglore",
+      "URL": "https://th.bing.com/th/id/OIP.qfjWGWhlpQ1UV_kjcI29YAHaE8?w=284&h=189&c=7&r=0&o=5&pid=1.7"
+    },
+    {
+      "id": "3",
+      "name": "Cargo Jeans",
+      "location": "Chennai",
+      "URL": "https://th.bing.com/th/id/OIP.I-Evjk5KbNyRH9CGo-NR7QHaFc?w=268&h=196&c=7&r=0&o=5&pid=1.7"
+    },
+    {
+      "id": "4",
+      "name": "Vevis",
+      "location": "Delhi",
+      "URL": "https://th.bing.com/th?q=Tonny+Jeans+Store&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
+    },
+    {
+      "id": "5",
+      "name": "Braves",
+      "location": "Mumbai",
+      "URL": "https://th.bing.com/th/id/OIP.ULVnejqfAaL9wpngdtQsBQHaFi?w=256&h=191&c=7&r=0&o=5&pid=1.7"
+    },
+    {
+      "id": "1633",
+      "name": "sarun",
+      "location": "hyd",
+      "URL": "\"abc.png\""
+    },
+    {
+      "id": "8eb3",
+      "name": "bhavish",
+      "location": "delhi",
+      "URL": "abc.png"
+    }
+  ],
+  "products": [
+    {
+      "id": "26",
+      "pname": "jeans",
+      "price": 123,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain",
+      "gender": "women",
+      "description": "High-quality denim jeans with a comfortable fit.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "Scolor": {
+        "S": {
+          "blue": 10,
+          "black": 15,
+          "white": 5
+        },
+        "M": {
+          "black": 20,
+          "blue": 8
+        },
+        "L": {
+          "black": 12
+        },
+        "XL": {
+          "black": 7,
+          "white": 3
         }
-      },
-        {
-        "id": 25,
-        "pname": "jacket",
-        "price": 150,
-        "Storeid": "1",
-        "url": "https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-        "gender": "women",
-        "description": "Stylish denim jacket perfect for any occasion.",
-        "sizes": ["S", "M", "L", "XL"],
-        "colors": ["blue", "black"]
-      },
-      {"id":"1","pname":"jeans","price":123,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain","gender":"women"},
-      {"id":2,"pname":"jacket","price":150,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":3,"pname":"shirts","price":200,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.RTLs-XFPBK6me9Lzrvj3rAHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":4,"pname":"skirts","price":220,"Storeid":"1","url":"https://i5.walmartimages.com/asr/e6bb3187-70f9-4ad8-bac8-d9c5fe8d2f33.79e50d5d3f45ebe5e002dcaceff0037f.jpeg","gender":"women"},
-      {"id":5,"pname":"dresses","price":450,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.IIeyWBoCoTBswOu2lwcn1QHaLz?w=195&h=312&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":6,"pname":"shorts","price":180,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.pXyfvFtsmcnzm0leIZLY_gHaKX?w=195&h=273&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":7,"pname":"overalls","price":300,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.6lXmdsjf9qKqlEXt4EvHkQHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":8,"pname":"jeans - Straight leg","price":123,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.5UBj2XhBve3l1gKmeh7sRQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":9,"pname":"jeans - Slim fit","price":150,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.kg0Uv2Hi0NrQETZKuq7kHQHaLH?w=133&h=199&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":10,"pname":"jeans - Skinny","price":200,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.DgIxL6ZJN5stitlFxuxHSAHaIc?w=195&h=222&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":11,"pname":"jeans - Bootcut","price":220,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.zOPVLt5pRTa-YGMUGyzofAHaKk?w=195&h=278&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":12,"pname":"jeans - Relaxed fit","price":450,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.-RV8kJ6pMx5o11V79xOQdgHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":13,"pname":"jeans - Tapered","price":180,"Storeid":"1","url":"http://ts2.mm.bing.net/th?id=OIP.lWUZPVM4EBUhGmCYezq3fgHaE7&pid=15.1","gender":"men"},
-      {"id":14,"pname":"jeans - Athletic fit","price":300,"Storeid":"1","url":"https://th.bing.com/th/id/OIP.6W-9mzgonvS89fxS0MoFZwHaJo?w=195&h=254&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      
-      {"id":15,"pname":"jeans","price":123,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain","gender":"women"},
-      {"id":16,"pname":"jacket","price":150,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":17,"pname":"shirts","price":200,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.RTLs-XFPBK6me9Lzrvj3rAHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":18,"pname":"skirts","price":220,"Storeid":"2","url":"https://i5.walmartimages.com/asr/e6bb3187-70f9-4ad8-bac8-d9c5fe8d2f33.79e50d5d3f45ebe5e002dcaceff0037f.jpeg","gender":"women"},
-      {"id":19,"pname":"dresses","price":450,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.IIeyWBoCoTBswOu2lwcn1QHaLz?w=195&h=312&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":20,"pname":"shorts","price":180,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.pXyfvFtsmcnzm0leIZLY_gHaKX?w=195&h=273&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":21,"pname":"overalls","price":300,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.6lXmdsjf9qKqlEXt4EvHkQHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"women"},
-      {"id":22,"pname":"jeans - Straight leg","price":123,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.5UBj2XhBve3l1gKmeh7sRQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":23,"pname":"jeans - Slim fit","price":150,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.kg0Uv2Hi0NrQETZKuq7kHQHaLH?w=133&h=199&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"},
-      {"id":24,"pname":"jeans - Skinny","price":200,"Storeid":"2","url":"https://th.bing.com/th/id/OIP.DgIxL6ZJN5stitlFxuxHSAHaIc?w=195&h=222&c=7&r=0&o=5&dpr=1.5&pid=1.7","gender":"men"}
-    ]
-    
+      }
+    },
+    {
+      "id": "25",
+      "pname": "jacket",
+      "price": 150,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women",
+      "description": "Stylish denim jacket perfect for any occasion.",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "blue",
+        "black"
+      ]
+    },
+    {
+      "id": "1",
+      "pname": "jeans",
+      "price": 123,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain",
+      "gender": "women"
+    },
+    {
+      "id": "2",
+      "pname": "jacket",
+      "price": 150,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "3",
+      "pname": "shirts",
+      "price": 200,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.RTLs-XFPBK6me9Lzrvj3rAHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "4",
+      "pname": "skirts",
+      "price": 220,
+      "Storeid": "1",
+      "url": "https://i5.walmartimages.com/asr/e6bb3187-70f9-4ad8-bac8-d9c5fe8d2f33.79e50d5d3f45ebe5e002dcaceff0037f.jpeg",
+      "gender": "women"
+    },
+    {
+      "id": "5",
+      "pname": "dresses",
+      "price": 450,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.IIeyWBoCoTBswOu2lwcn1QHaLz?w=195&h=312&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "6",
+      "pname": "shorts",
+      "price": 180,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.pXyfvFtsmcnzm0leIZLY_gHaKX?w=195&h=273&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "7",
+      "pname": "overalls",
+      "price": 300,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.6lXmdsjf9qKqlEXt4EvHkQHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "8",
+      "pname": "jeans - Straight leg",
+      "price": 123,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.5UBj2XhBve3l1gKmeh7sRQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "9",
+      "pname": "jeans - Slim fit",
+      "price": 150,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.kg0Uv2Hi0NrQETZKuq7kHQHaLH?w=133&h=199&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "10",
+      "pname": "jeans - Skinny",
+      "price": 200,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.DgIxL6ZJN5stitlFxuxHSAHaIc?w=195&h=222&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "11",
+      "pname": "jeans - Bootcut",
+      "price": 220,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.zOPVLt5pRTa-YGMUGyzofAHaKk?w=195&h=278&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "12",
+      "pname": "jeans - Relaxed fit",
+      "price": 450,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.-RV8kJ6pMx5o11V79xOQdgHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "13",
+      "pname": "jeans - Tapered",
+      "price": 180,
+      "Storeid": "1",
+      "url": "http://ts2.mm.bing.net/th?id=OIP.lWUZPVM4EBUhGmCYezq3fgHaE7&pid=15.1",
+      "gender": "men"
+    },
+    {
+      "id": "14",
+      "pname": "jeans - Athletic fit",
+      "price": 300,
+      "Storeid": "1",
+      "url": "https://th.bing.com/th/id/OIP.6W-9mzgonvS89fxS0MoFZwHaJo?w=195&h=254&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "15",
+      "pname": "jeans",
+      "price": 123,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?rs=1&pid=ImgDetMain",
+      "gender": "women"
+    },
+    {
+      "id": "16",
+      "pname": "jacket",
+      "price": 150,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.WisfLdeJB4Hrbs3Rhf-TXQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "17",
+      "pname": "shirts",
+      "price": 200,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.RTLs-XFPBK6me9Lzrvj3rAHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "18",
+      "pname": "skirts",
+      "price": 220,
+      "Storeid": "2",
+      "url": "https://i5.walmartimages.com/asr/e6bb3187-70f9-4ad8-bac8-d9c5fe8d2f33.79e50d5d3f45ebe5e002dcaceff0037f.jpeg",
+      "gender": "women"
+    },
+    {
+      "id": "19",
+      "pname": "dresses",
+      "price": 450,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.IIeyWBoCoTBswOu2lwcn1QHaLz?w=195&h=312&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "20",
+      "pname": "shorts",
+      "price": 180,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.pXyfvFtsmcnzm0leIZLY_gHaKX?w=195&h=273&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "21",
+      "pname": "overalls",
+      "price": 300,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.6lXmdsjf9qKqlEXt4EvHkQHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "women"
+    },
+    {
+      "id": "22",
+      "pname": "jeans - Straight leg",
+      "price": 123,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.5UBj2XhBve3l1gKmeh7sRQAAAA?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "23",
+      "pname": "jeans - Slim fit",
+      "price": 150,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.kg0Uv2Hi0NrQETZKuq7kHQHaLH?w=133&h=199&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    },
+    {
+      "id": "24",
+      "pname": "jeans - Skinny",
+      "price": 200,
+      "Storeid": "2",
+      "url": "https://th.bing.com/th/id/OIP.DgIxL6ZJN5stitlFxuxHSAHaIc?w=195&h=222&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "gender": "men"
+    }
+  ]
 }

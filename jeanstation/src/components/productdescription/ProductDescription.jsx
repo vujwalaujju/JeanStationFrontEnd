@@ -62,44 +62,46 @@ const ProductDescription = () => {
   return (
     <div className="product-description">
       <img src={product.url} alt={product.pname} />
-      <h1>{product.pname}</h1>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <div>
-        <label>Sizes: </label>
-        {product.sizes.map(size => (
-          <button 
-            key={size} 
-            className={`size-button ${selectedSize === size ? 'selected' : ''}`} 
-            onClick={() => handleSizeClick(size)}
-          >
-            {size}
-          </button>
-        ))}
-      </div>
-      {selectedSize && (
-        <div>
-          <label>Colors: </label>
-          {availableColors.map(color => (
+      <div className="product-details">
+        <h1>{product.pname}</h1>
+        <p>{product.description}</p>
+        <p className="price">Price: ${product.price}</p>
+        <div className="sizes">
+          <label>Sizes: </label>
+          {product.sizes.map(size => (
             <button 
-              key={color} 
-              className={`color-button ${selectedColor === color ? 'selected' : ''}`} 
-              style={{ backgroundColor: color }} 
-              onClick={() => handleColorClick(color)}
+              key={size} 
+              className={`size-button ${selectedSize === size ? 'selected' : ''}`} 
+              onClick={() => handleSizeClick(size)}
             >
-              {color}
+              {size}
             </button>
           ))}
         </div>
-      )}
-      {selectedColor && (
-        <div className="quantity-control">
-          <button onClick={() => handleQuantityChange(-1)} disabled={quantity <= 0}>-</button>
-          <span>{quantity > 0 ? quantity : 'Out of Stock'}</span>
-          <button onClick={() => handleQuantityChange(1)} disabled={quantity <= 0}>+</button>
-        </div>
-      )}
-      <button className="add-to-cart" disabled={quantity <= 0}>Add to Cart</button>
+        {selectedSize && (
+          <div className="colors">
+            <label>Colors: </label>
+            {availableColors.map(color => (
+              <button 
+                key={color} 
+                className={`color-button ${selectedColor === color ? 'selected' : ''}`} 
+                style={{ backgroundColor: color }} 
+                onClick={() => handleColorClick(color)}
+              >
+                {color}
+              </button>
+            ))}
+          </div>
+        )}
+        {selectedColor && (
+          <div className="quantity-control">
+            <button onClick={() => handleQuantityChange(-1)} disabled={quantity <= 0}>-</button>
+            <span>{quantity > 0 ? quantity : 'Out of Stock'}</span>
+            <button onClick={() => handleQuantityChange(1)} disabled={quantity <= 0}>+</button>
+          </div>
+        )}
+        <button className="add-to-cart" disabled={quantity <= 0}>Add to Cart</button>
+      </div>
     </div>
   );
 };

@@ -21,7 +21,8 @@ const ShowStore = () => {
   };
 
   const handleStoreClick = (storeId) => {
-    navigate(`/admin/showproduct/${storeId}`);
+    //alert('showproduct')
+   navigate(`/admin/showproduct/${storeId}`);
   };
 
   const handleAddProductClick = (storeId) => {

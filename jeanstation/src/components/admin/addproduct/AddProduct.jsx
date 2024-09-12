@@ -18,7 +18,7 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5128/api/Product/$(storeId)', newProduct)
+    axios.post('http://localhost:5128/api/Product', newProduct)
       .then(() => {
         setNewProduct({ Name: '', Price: '', Image: '', StoreId: storeId }); // Reset the form
       })

@@ -1,34 +1,39 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './Stores.css';
-
 const Stores = () => {
-  const [store, setStore] = useState([]);
-  const navigate = useNavigate();
+  const [stores, setStores] = useState([]);
+ 
 
   useEffect(() => {
-    axios.get("http://localhost:3000/Stores").then((response) => {
-      setStore(response.data);
-    });
+    fetchStores();
   }, []);
 
-  const handleStoreClick = (id) => {
-    navigate(`/products/${id}`);
+  const fetchStores = () => {
+    axios.get('http://localhost:5128/api/Store')
+      .then(response => {
+        setStores(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching stores:', error);
+      });
   };
 
+  
+
   return (
-    <div className="cardcontainer">
-      {store.map((Stores) => (
-        <div className="product-card" key={Stores.id} onClick={() => { handleStoreClick(Stores.id) }}>
-          <h4>{Stores.id}</h4>
-          <h4>{Stores.location}</h4>
-          <img src={Stores.URL} width={60} height={40} alt={Stores.name} />
-          <h4>{Stores.name}</h4>
+    <div className="row">
+      {stores.map(store => (
+        <div className="col-md-4" key={store.id}>
+          <div className="card mb-4" style={{ cursor: 'pointer' }} >
+            <img src={store.image} className="card-img-top" alt={store.location} />
+            <div className="card-body">
+              <h5 className="card-title">{store.location}</h5>
+            </div>
+          </div>
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default Stores;

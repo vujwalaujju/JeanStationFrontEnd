@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import './StoreProducts.css'; // Import the CSS file
+import { useNavigate, useParams } from 'react-router-dom';
+import './StoreProducts.css'; 
 
 const StoreProducts = () => {
+  const navigate = useNavigate();
   const { storeId } = useParams();
   const [products, setProducts] = useState([]);
 
@@ -18,13 +19,22 @@ const StoreProducts = () => {
       });
   }, [storeId]);
 
+  const StockProductHandler = (product) => {
+    navigate(`/productdescription/${product.code}`, { state: { image: product.image } });
+  };
+
   return (
     <div className="container">
       <h1 className="my-4">Products in Store {storeId}</h1>
       <div className="row">
         {products.length > 0 ? (
           products.map(product => (
-            <div className="col-md-4" key={product.id}>
+            <div 
+              className="col-md-4" 
+              key={product.code} 
+              onClick={() => StockProductHandler(product)} 
+              style={{ cursor: 'pointer' }}
+            >
               <div className="card mb-4 custom-card">
                 <img 
                   src={product.image} 

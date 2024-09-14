@@ -13,8 +13,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Stores />} />
-          <Route path="/products/:id" element={<StoreProducts />} />
-          <Route path="/product/:id" element={<ProductDescription />} />
+          <Route path="/storeproducts/:storeId" element={<StoreProducts />} />
+          <Route path="/productdescription/:productId" element={<ProductDescription />} />
   
         </Routes>
         <Adminlayout/>

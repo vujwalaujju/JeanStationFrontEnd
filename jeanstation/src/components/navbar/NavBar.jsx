@@ -1,7 +1,12 @@
 import React from 'react';
+
 import './NavBar.css';
 
 const NavBar = () => {
+
+
+  
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -10,7 +15,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-buttons">
           <button className="nav-button">Sign In</button>
-        <button className="nav-button">SignUp</button>
+          <button className="nav-button" >SignUp</button>
         </div>
       </div>
     </nav>
@@ -18,3 +23,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+

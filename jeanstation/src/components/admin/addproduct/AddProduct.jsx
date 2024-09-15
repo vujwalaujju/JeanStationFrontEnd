@@ -8,6 +8,8 @@ const AddProduct = () => {
     Name: '',
     Price: '',
     Image: '',
+    Description: '',
+    Gender: '',
     StoreId: storeId
   });
 
@@ -20,7 +22,7 @@ const AddProduct = () => {
     e.preventDefault();
     axios.post('http://localhost:5128/api/Product', newProduct)
       .then(() => {
-        setNewProduct({ Name: '', Price: '', Image: '', StoreId: storeId }); // Reset the form
+        setNewProduct({ Name: '', Price: '', Image: '', Description: '', Gender: '', StoreId: storeId }); // Reset the form
       })
       .catch(error => {
         console.error('Error adding product:', error);
@@ -63,6 +65,31 @@ const AddProduct = () => {
             onChange={handleInputChange}
             required
           />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Description:</label>
+          <textarea
+            name="Description"
+            className="form-control"
+            value={newProduct.Description}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Gender:</label>
+          <select
+            name="Gender"
+            className="form-control"
+            value={newProduct.Gender}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+          </select>
         </div>
         <button type="submit" className="btn btn-primary">Add Product</button>
       </form>

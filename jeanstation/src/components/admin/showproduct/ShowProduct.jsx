@@ -43,6 +43,8 @@ const ShowProduct = () => {
                 <div className="card-body">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">Price: {product.price}</p>
+                  <p className="card-text">Description: {product.description}</p>
+                  <p className="card-text">Gender: {product.gender}</p>
                 </div>
                 <button onClick={() => StockProductHandler(product)}>View</button>
               </div>

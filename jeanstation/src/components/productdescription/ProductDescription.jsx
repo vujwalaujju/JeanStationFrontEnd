@@ -9,7 +9,6 @@ const ProductDescription = () => {
   const [productDetails, setProductDetails] = useState([]);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     axios.get(`http://localhost:5128/api/StockProduct/ByProductId/${productId}`)
@@ -25,24 +24,15 @@ const ProductDescription = () => {
   const handleColorClick = (color) => {
     setSelectedColor(color);
     setSelectedSize(null); // Reset size selection when color changes
-    setQuantity(1); // Reset quantity when color changes
   };
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
-    setQuantity(1); // Reset quantity when size changes
   };
 
   const handleAddToCart = () => {
     // Implement the logic to add the product to the cart
     console.log("Product added to cart");
-  };
-
-  const handleQuantityChange = (amount) => {
-    const selectedProduct = productDetails.find(detail => detail.colour === selectedColor && detail.size === selectedSize);
-    if (selectedProduct) {
-      setQuantity(prevQuantity => Math.max(1, Math.min(prevQuantity + amount, selectedProduct.quantity)));
-    }
   };
 
   const colors = [...new Set(productDetails.map(detail => detail.colour))];
@@ -64,7 +54,9 @@ const ProductDescription = () => {
           />
         </div>
         <div className="col-md-6">
-          <h2>Product Details</h2>
+          <p><strong></strong> {location.state.description}</p>
+          <p><strong></strong> {location.state.price}</p>
+          <p><strong></strong> {location.state.gender}</p>
           <div>
             <h3>Colors</h3>
             {colors.map(color => (
@@ -90,16 +82,6 @@ const ProductDescription = () => {
                     {size}
                   </button>
                 ))}
-              </div>
-            </div>
-          )}
-          {selectedSize && (
-            <div>
-              <h3>Quantity for {selectedSize}</h3>
-              <div className="quantity-control">
-                <button className="btn btn-secondary" onClick={() => handleQuantityChange(-1)}>-</button>
-                <span className="mx-2">{quantity}</span>
-                <button className="btn btn-secondary" onClick={() => handleQuantityChange(1)}>+</button>
               </div>
             </div>
           )}

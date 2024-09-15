@@ -5,7 +5,6 @@
   gap: 20px; /* Adds spacing between product cards */
   justify-content: space-evenly;
 }
-
 /* Each product card */
 .product-item {
   display: flex;

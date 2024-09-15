@@ -15,8 +15,8 @@ function App() {
           <Route path="/" element={<Stores />} />
           <Route path="/storeproducts/:storeId" element={<StoreProducts />} />
           <Route path="/productdescription/:productId" element={<ProductDescription />} />
-  
-        </Routes>
+
+          </Routes>
         <Adminlayout/>
       </Router>
     </div>

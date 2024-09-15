@@ -1,9 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import '/SignUp.css';
 
-const Signup = () => {
+const SignUp = () => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -104,4 +103,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;

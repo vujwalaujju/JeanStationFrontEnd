@@ -53,7 +53,8 @@ const StoreProducts = () => {
         id: product.code, 
         gender: product.gender, 
         description: product.description, 
-        price: product.price 
+        price: product.price,
+        name:product.name
       } 
     });
   };

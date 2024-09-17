@@ -7,7 +7,8 @@ const SignUp = () => {
     initialValues: {
       name: '',
       email: '',
-      mobileNumber: '',
+      phoneNumber: '',
+      role: '',
       password: '',
     },
     validationSchema: Yup.object({
@@ -17,15 +18,19 @@ const SignUp = () => {
       email: Yup.string()
         .email('Invalid email address')
         .required('Required'),
-      mobileNumber: Yup.string()
+      phoneNumber: Yup.string()
         .matches(/^[0-9]{10}$/, 'Must be a valid mobile number')
+        .required('Required'),
+      role: Yup.string()
+        .oneOf(['Admin', 'User'], 'Invalid Role')
         .required('Required'),
       password: Yup.string()
         .min(8, 'Password must be at least 8 characters')
         .required('Required'),
     }),
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, { resetForm }) => {
+      alert("Registration Done");
+      resetForm();
     },
   });
 
@@ -66,18 +71,37 @@ const SignUp = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="mobileNumber">Mobile Number</label>
+          <label htmlFor="phoneNumber">Phone Number</label>
           <input
-            id="mobileNumber"
-            name="mobileNumber"
+            id="phoneNumber"
+            name="phoneNumber"
             type="text"
             className="form-control"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.mobileNumber}
+            value={formik.values.phoneNumber}
           />
-          {formik.touched.mobileNumber && formik.errors.mobileNumber ? (
-            <div className="text-danger">{formik.errors.mobileNumber}</div>
+          {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+            <div className="text-danger">{formik.errors.phoneNumber}</div>
+          ) : null}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="role">Role</label>
+          <select
+            id="role"
+            name="role"
+            className="form-control"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.role}
+          >
+            <option value="" label="Select role" />
+            <option value="Admin" label="Admin" />
+            <option value="User" label="User" />
+          </select>
+          {formik.touched.role && formik.errors.role ? (
+            <div className="text-danger">{formik.errors.role}</div>
           ) : null}
         </div>
 

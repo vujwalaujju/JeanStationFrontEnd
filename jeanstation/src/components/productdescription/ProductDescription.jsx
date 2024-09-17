@@ -54,6 +54,7 @@ const ProductDescription = () => {
           />
         </div>
         <div className="col-md-6">
+          <p>{location.state.name}</p>
           <p><strong></strong> {location.state.description}</p>
           <p><strong></strong> {location.state.price}</p>
           <p><strong></strong> {location.state.gender}</p>

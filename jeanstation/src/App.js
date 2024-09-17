@@ -6,6 +6,7 @@ import ProductDescription from './Components/productdescription/ProductDescripti
 import NavBar from './Components/Navbar/NavBar';
 import './App.css';
 import Adminlayout from './Adminlayout';
+import SignUp from './Components/signup/SignUp';
 function App() {
   return (
     <div className="App">
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={<Stores />} />
           <Route path="/storeproducts/:storeId" element={<StoreProducts />} />
           <Route path="/productdescription/:productId" element={<ProductDescription />} />
-
+<Route path="/signup" element={<SignUp/>}/>
           </Routes>
         <Adminlayout/>
       </Router>

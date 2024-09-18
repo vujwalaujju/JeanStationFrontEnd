@@ -8,6 +8,12 @@ const navigate=useNavigate();
 const handlesignup=()=>{
   navigate('/signup')
 }
+const handlesignin=()=>{
+  navigate('/signin')
+}
+const handlelogout=()=>{
+  navigate('/logout')
+}
 
   
 
@@ -18,8 +24,9 @@ const handlesignup=()=>{
           JEANS STATION
         </div>
         <div className="navbar-buttons">
-          <button className="nav-button">Sign In</button>
+          <button className="nav-button" onClick={handlesignin}>Sign In</button>
           <button className="nav-button"onClick={handlesignup} >SignUp</button>
+          <button className="nav-button"onClick={handlelogout} >LogOut</button>
         </div>
       </div>
     </nav>

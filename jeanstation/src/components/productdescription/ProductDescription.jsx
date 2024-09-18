@@ -31,7 +31,7 @@ const ProductDescription = () => {
   };
 
   const handleAddToCart = () => {
-    // Implement the logic to add the product to the cart
+    
     console.log("Product added to cart");
   };
 

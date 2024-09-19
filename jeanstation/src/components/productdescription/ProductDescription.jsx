@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import './ProductDescription.css';
-
+import { CartContext } from '../cart/CartContext';
 const ProductDescription = () => {
   const { productId } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const [productDetails, setProductDetails] = useState([]);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     axios.get(`http://localhost:5128/api/StockProduct/ByProductId/${productId}`)
@@ -31,8 +33,22 @@ const ProductDescription = () => {
   };
 
   const handleAddToCart = () => {
-    
-    console.log("Product added to cart");
+    if (selectedColor && selectedSize) {
+      const product = {
+        productId, // Corrected the reference here
+        name: location.state.name,
+        image: location.state.image,
+        price: location.state.price,
+        color: selectedColor,
+        size: selectedSize,
+        quantity: 1, // Default quantity
+      };
+      addToCart(product); // Use the CartContext to add the product
+      navigate('/cart');
+      console.log("Product added to cart");
+    } else {
+      alert("Please select both color and size");
+    }
   };
 
   const colors = [...new Set(productDetails.map(detail => detail.colour))];
@@ -46,18 +62,14 @@ const ProductDescription = () => {
           <img 
             src={location.state.image} 
             alt="Product" 
-            style={{ 
-              maxHeight: '300px', 
-              width: '100%', 
-              objectFit: 'contain' 
-            }} 
+            style={{ maxHeight: '300px', width: '100%', objectFit: 'contain' }} 
           />
         </div>
         <div className="col-md-6">
-          <p>{location.state.name}</p>
-          <p><strong></strong> {location.state.description}</p>
-          <p><strong></strong> {location.state.price}</p>
-          <p><strong></strong> {location.state.gender}</p>
+          <p><strong>{location.state.name}</strong></p>
+          <p><strong>Description:</strong> {location.state.description}</p>
+          <p><strong>Price:</strong> {location.state.price}</p>
+
           <div>
             <h3>Colors</h3>
             {colors.map(color => (
@@ -70,6 +82,7 @@ const ProductDescription = () => {
               </button>
             ))}
           </div>
+
           {selectedColor && (
             <div>
               <h3>Sizes for {selectedColor}</h3>
@@ -86,6 +99,7 @@ const ProductDescription = () => {
               </div>
             </div>
           )}
+
           <button className="btn btn-primary mt-4" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>

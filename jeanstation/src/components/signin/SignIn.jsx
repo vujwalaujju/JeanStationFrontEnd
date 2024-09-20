@@ -37,6 +37,7 @@ const SignIn = () => {
           const data = await response.json();
           localStorage.setItem('authToken', data.token); // Storing  token in local storage
           localStorage.setItem('email',values.email)
+          localStorage.setItem('role',values.role)
           alert('Sign-in successful');
           
           // Navigate based on role

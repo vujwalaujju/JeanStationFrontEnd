@@ -54,3 +54,4 @@ const AddStore = ({ fetchStores }) => {
 };
 
 export default AddStore;
+

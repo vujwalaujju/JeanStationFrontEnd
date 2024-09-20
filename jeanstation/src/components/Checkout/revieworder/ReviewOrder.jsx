@@ -26,7 +26,7 @@ const ReviewOrders = () => {
   const handleProceedToCheckout = () => {
     axios.post('http://localhost:5128/api/order',{
       email:localStorage.getItem('email'),
-      grossAmount:calculateGrossAmount
+      grossAmount:calculateGrossAmount()
   }).then(()=>{
     alert('Order Placed successfully')
     setCart([])

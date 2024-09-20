@@ -100,7 +100,8 @@ export const CartProvider = ({ children }) => {
       });
 
   };
- 
+  
+  
   const handleQuantityChange = (productId, quantity) => {
     if (quantity < 1) return;
 
@@ -108,8 +109,8 @@ export const CartProvider = ({ children }) => {
       item.productId === productId
         ? { ...item, quantity: Math.min(quantity, 5), totalPrice: Math.min(quantity, 5) * item.price }
         : item
-    );
-    // updateCart(updatedCart);
+   );
+     updateCart(updatedCart);
 
     axios.put(`http://localhost:5128/api/Cart/UpdateQuantity/${productId}`, {
       quantity: Math.min(quantity, 5)

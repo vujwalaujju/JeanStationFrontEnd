@@ -28,7 +28,7 @@ const StoreProducts = () => {
 
   const fetchProductsByGender = (gender) => {
     console.log(`Fetching products for gender: ${gender}`);
-    axios.get(`http://localhost:5128/api/Product/Gender/${gender}`)
+    axios.get(`http://localhost:5128/api/product/gender/${gender}`)
       .then(response => {
         console.log(`Fetched ${gender} products:`, response.data);
         setFilteredProducts(response.data);
@@ -54,7 +54,7 @@ const StoreProducts = () => {
         gender: product.gender, 
         description: product.description, 
         price: product.price,
-        name:product.name
+        name: product.name
       } 
     });
   };
@@ -72,13 +72,13 @@ const StoreProducts = () => {
         />
         <button 
           className="btn btn-secondary me-2" 
-          onClick={() => fetchProductsByGender('Women')}
+          onClick={() => fetchProductsByGender('female')}
         >
           Women
         </button>
         <button 
           className="btn btn-secondary" 
-          onClick={() => fetchProductsByGender('Men')}
+          onClick={() => fetchProductsByGender('male')}
         >
           Men
         </button>

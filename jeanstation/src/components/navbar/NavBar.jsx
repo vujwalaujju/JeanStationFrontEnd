@@ -18,7 +18,9 @@ const handlelogout=()=>{
 const handlecart=()=>{
   navigate('/cart')
 }
-
+const handleorders=()=>{
+  navigate('/order')
+}
 
   return (
     <nav className="navbar">
@@ -27,10 +29,20 @@ const handlecart=()=>{
         <a > <Link to="/">Jean Station</Link> </a>
         </div>
         <div className="navbar-buttons">
-        <button className="nav-button" onClick={handlecart}>Cart</button>
-          <button className="nav-button" onClick={handlesignin}>Sign In</button>
-          <button className="nav-button"onClick={handlesignup} >SignUp</button>
+          {localStorage.getItem('email') !=null ?
+          <div>
+          <button className="nav-button" onClick={handlecart}>Cart</button>
+          <button className="nav-button" onClick={handleorders}>orders</button>
           <button className="nav-button"onClick={handlelogout} >LogOut</button>
+          </div>
+          :
+          <div>
+            <button className="nav-button" onClick={handlesignin}>Sign In</button>
+            <button className="nav-button"onClick={handlesignup} >SignUp</button>
+
+          </div>
+          
+          }
         </div>
       </div>
     </nav>

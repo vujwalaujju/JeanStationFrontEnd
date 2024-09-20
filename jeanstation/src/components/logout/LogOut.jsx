@@ -4,6 +4,8 @@ const LogOut = () => {
     const navigate = useNavigate();
     useEffect(() => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('email')
+    localStorage.removeItem('role')
     navigate('/');
     },[navigate]);
   return (

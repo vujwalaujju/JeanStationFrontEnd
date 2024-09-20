@@ -12,6 +12,14 @@ const ShowProduct = () => {
     navigate(`/admin/stockproduct/${product.code}`, { state: { image: product.image } });
   };
 
+  const AddProductHandler = () => {
+    navigate(`/admin/addproduct/${storeId}`);
+  };
+
+  const ShowStockProductHandler = () => {
+    navigate(`/admin/showstockproduct`);
+  };
+
   useEffect(() => {
     axios.get(`http://localhost:5128/api/Product/${storeId}`)
       .then(response => {
@@ -53,6 +61,22 @@ const ShowProduct = () => {
         ) : (
           <p>No products found for this store.</p>
         )}
+        {/* Add empty card for adding new product */}
+        <div className="col-md-4">
+          <div className="card mb-4 custom-card add-product-card" onClick={AddProductHandler}>
+            <div className="card-body d-flex justify-content-center align-items-center" style={{ height: '150px' }}>
+              <h5 className="card-title">Add New Product</h5>
+            </div>
+          </div>
+        </div>
+        {/* Add empty card for showing stock product */}
+        <div className="col-md-4">
+          <div className="card mb-4 custom-card show-stock-product-card" onClick={ShowStockProductHandler}>
+            <div className="card-body d-flex justify-content-center align-items-center" style={{ height: '150px' }}>
+              <h5 className="card-title">Show Stock Product</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -26,8 +26,8 @@ const SignUp = () => {
         .required('Required'),
     }),
     onSubmit: (values, { resetForm }) => {
-      const userId = generateRandomId(); // Generate a random integer ID
-      const userData = { ...values, id: userId }; // Include the ID in the user data
+      const userId = generateRandomId();
+      const userData = { ...values, id: userId };
 
       axios.post('http://localhost:5055/api/SignUp', userData, {
         headers: {
@@ -51,21 +51,21 @@ const SignUp = () => {
 
   return (
     <div className="container mt-5">
-      <h1>Signup</h1>
-      <form onSubmit={formik.handleSubmit}>
+      <h1 className="text-center mb-4">Signup</h1>
+      <form onSubmit={formik.handleSubmit} className="bg-light p-4 rounded shadow">
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
             id="email"
             name="email"
             type="email"
-            className="form-control"
+            className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''}`}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
           />
           {formik.touched.email && formik.errors.email ? (
-            <div className="text-danger">{formik.errors.email}</div>
+            <div className="invalid-feedback">{formik.errors.email}</div>
           ) : null}
         </div>
 
@@ -75,13 +75,13 @@ const SignUp = () => {
             id="phoneNumber"
             name="phoneNumber"
             type="text"
-            className="form-control"
+            className={`form-control ${formik.touched.phoneNumber && formik.errors.phoneNumber ? 'is-invalid' : ''}`}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.phoneNumber}
           />
           {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-            <div className="text-danger">{formik.errors.phoneNumber}</div>
+            <div className="invalid-feedback">{formik.errors.phoneNumber}</div>
           ) : null}
         </div>
 
@@ -90,7 +90,7 @@ const SignUp = () => {
           <select
             id="role"
             name="role"
-            className="form-control"
+            className={`form-control ${formik.touched.role && formik.errors.role ? 'is-invalid' : ''}`}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.role}
@@ -100,7 +100,7 @@ const SignUp = () => {
             <option value="User" label="User" />
           </select>
           {formik.touched.role && formik.errors.role ? (
-            <div className="text-danger">{formik.errors.role}</div>
+            <div className="invalid-feedback">{formik.errors.role}</div>
           ) : null}
         </div>
 
@@ -110,24 +110,24 @@ const SignUp = () => {
             id="password"
             name="password"
             type="password"
-            className="form-control"
+            className={`form-control ${formik.touched.password && formik.errors.password ? 'is-invalid' : ''}`}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
           />
           {formik.touched.password && formik.errors.password ? (
-            <div className="text-danger">{formik.errors.password}</div>
+            <div className="invalid-feedback">{formik.errors.password}</div>
           ) : null}
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">Submit</button>
+        <button type="submit" className="btn btn-primary btn-block mt-3">Submit</button>
       </form>
     </div>
   );
 };
 
 const generateRandomId = () => {
-  return Math.floor(Math.random() * 1000000); // Generates a random integer between 0 and 999999
+  return Math.floor(Math.random() * 1000000);
 };
 
 export default SignUp;

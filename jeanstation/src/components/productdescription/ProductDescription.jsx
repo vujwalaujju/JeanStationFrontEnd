@@ -25,7 +25,7 @@ const ProductDescription = () => {
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
-    setSelectedSize(null); // Reset size selection when color changes
+    setSelectedSize(null); // reseting  size selection when color changes
   };
 
   const handleSizeClick = (size) => {
@@ -35,7 +35,7 @@ const ProductDescription = () => {
   const handleAddToCart = () => {
     if (selectedColor && selectedSize) {
       const product = {
-        productId, // Corrected the reference here
+        productId, 
         name: location.state.name,
         image: location.state.image,
         price: location.state.price,
@@ -43,7 +43,7 @@ const ProductDescription = () => {
         size: selectedSize,
         quantity: 1, // Default quantity
       };
-      addToCart(product); // Use the CartContext to add the product
+      addToCart(product); // Using  the CartContext to add the product
       navigate('/cart');
       console.log("Product added to cart");
     } else {

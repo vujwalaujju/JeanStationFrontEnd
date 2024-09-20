@@ -14,6 +14,7 @@ import ShippingForm from './Components/Checkout/shipping/ShippingForm';
 import PaymentForm from './Components/Checkout/payment/PaymentForm';
 import Cart from './Components/cart/Cart';
 import CartProvider from './Components/cart/CartContext';
+import Order from './Components/order/Order';
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
             <Route path="/review-order" element={<ReviewOrder/>}/>
             <Route path="/shipping" element={<ShippingForm/>} />
             <Route path="/payment" element={<PaymentForm/>}/>
+            <Route path="/order" element={<Order/>}/>
         
           </Routes>
           
